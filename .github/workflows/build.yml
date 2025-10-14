@@ -44,9 +44,9 @@ jobs:
           CFLAGS=-DPSAPI_VERSION=1 LDFLAGS=-lpsapi python waf all --target-arch=32bit --gcc
 
       - name: Build package
-        run: |
-          python -m pip install build setuptools wheel
-          python -m build --no-isolation
+  run: |
+    python -m pip install build setuptools wheel hatchling
+    python -m build --no-isolation
 
       - name: Generate index.html
         run: |

@@ -33,7 +33,7 @@ jobs:
             mingw-w64-i686-python-pip
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: pyinstaller/pyinstaller
           ref: ${{ inputs.ref }}

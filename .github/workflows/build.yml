@@ -4,7 +4,7 @@ on:
     inputs:
       ref:
         required: true
-        default: v6.18.0
+        default: v6.19.0
         type: string
 
 permissions:
@@ -63,5 +63,5 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v6
         with:
-          name: pyinstaller-6.18.0-packages
+          name: pyinstaller-6.19.0-packages
           path: dist/*

@@ -1,6 +1,6 @@
 # PyInstaller Builds
 
-Builds PyInstaller compatible with Windows Vista 32-bit.
+Builds PyInstaller compatible with Windows Vista 32-bit and Windows 7 32-bit.
 
 ## Credits
 

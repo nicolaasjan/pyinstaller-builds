@@ -46,6 +46,7 @@ jobs:
       - name: Build package
         run: |
           python -m pip install build setuptools wheel hatchling
+          PYI_PLATFORM=Windows-32bit-intel PYI_WHEEL_TAG=win32
           python -m build --no-isolation
 
       - name: Generate index.html

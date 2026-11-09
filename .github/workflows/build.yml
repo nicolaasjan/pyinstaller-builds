@@ -49,13 +49,12 @@ jobs:
           
           export PATH="$PATH:/mingw64/bin"
           CC=/mingw64/bin/x86_64-w64-mingw32-gcc.exe
-          AR=/mingw64/bin/x86_64-w64-mingw32-ar.exe
+          unset AR
 
-          CC="$CC" AR="$AR" \
+          CC="$CC" \
           CFLAGS=-DPSAPI_VERSION=1 \
           LDFLAGS=-lpsapi \
           python waf all --target-arch=64bit --gcc
-
           
       - name: Upload Waf config log
         if: always()

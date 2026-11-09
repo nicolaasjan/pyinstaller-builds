@@ -52,18 +52,6 @@ jobs:
           PYI_WHEEL_TAG=win32 \
           python -m hatchling build -t wheel
 
-      - name: Generate index.html
-        run: |
-          cat <<EOF > dist/index.html
-          <!DOCTYPE html>
-          <html>
-          <body>
-          <ul>
-          $(ls dist | sed -r 's,.+,<li><a href="\0">\0</a></li>,')
-          </ul>
-          </body>
-          EOF
-
       - name: Upload build artifacts
         uses: actions/upload-artifact@v7
         with:

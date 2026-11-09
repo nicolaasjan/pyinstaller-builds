@@ -46,13 +46,10 @@ jobs:
           CFLAGS=-DPSAPI_VERSION=1 \
           LDFLAGS=-lpsapi \
           python waf all --target-arch=32bit --gcc
-
-          export PATH="/mingw64/bin:$PATH"
-          CC=/mingw64/bin/x86_64-w64-mingw32-gcc
-          AR=/mingw64/bin/x86_64-w64-mingw32-ar
-
-          "$CC" --version
-          printf '' | "$CC" -dM -E - >/dev/null
+          
+          export PATH="$PATH:/mingw64/bin"
+          CC=/mingw64/bin/x86_64-w64-mingw32-gcc.exe
+          AR=/mingw64/bin/x86_64-w64-mingw32-ar.exe
 
           CC="$CC" AR="$AR" \
           CFLAGS=-DPSAPI_VERSION=1 \

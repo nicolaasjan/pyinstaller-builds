@@ -39,6 +39,14 @@ jobs:
           repository: pyinstaller/pyinstaller
           ref: ${{ inputs.ref }}
 
+      - name: Apply Python 3.15 DLL collection fix
+        run: |
+          curl -fsSL \
+            https://github.com/pyinstaller/pyinstaller/commit/dda9f641b3baf912828708cce7a5d87e94905356.patch \
+            -o /tmp/python315-fix.patch
+          git apply --check /tmp/python315-fix.patch
+          git apply /tmp/python315-fix.patch
+
       - name: Build bootloaders
         run: |
           cd bootloader

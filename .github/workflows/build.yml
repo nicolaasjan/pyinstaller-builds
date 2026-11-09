@@ -48,6 +48,8 @@ jobs:
           python waf all --target-arch=32bit --gcc
 
           PATH=/mingw64/bin:$PATH \
+          /mingw64/bin/x86_64-w64-mingw32-gcc --version
+          printf '' | /mingw64/bin/x86_64-w64-mingw32-gcc -dM -E -
           CC=/mingw64/bin/x86_64-w64-mingw32-gcc \
           AR=/mingw64/bin/x86_64-w64-mingw32-ar \
           CFLAGS=-DPSAPI_VERSION=1 \

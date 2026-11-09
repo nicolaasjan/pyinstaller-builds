@@ -41,8 +41,6 @@ jobs:
       - name: Build bootloader
         run: |
           cd bootloader
-          CC=i686-w64-mingw32-gcc \
-          AR=i686-w64-mingw32-ar \
           CFLAGS=-DPSAPI_VERSION=1 \
           LDFLAGS=-lpsapi \
           python waf all --target-arch=32bit --gcc
